@@ -1,7 +1,5 @@
 rovider "aws" {
-  region = "us-east-1"
-  access_key = "AKIAISRLBZFYYBL3KTCQ"
-  secret_key = "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"
+
 }
 resource "aws_vpc" "vpc" {
   cidr_block = "10.0.0.0/16"
