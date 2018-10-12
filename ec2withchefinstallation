@@ -1,0 +1,17 @@
+provider "aws" {
+  profile  = ""
+  region     = "eu-west-1"
+}
+
+resource "aws_instance" "chef" {
+  instance_type = "t2.micro"
+  ami = "ami-0773391ae604c49a4"
+  key_name = "droolsdockerpoc"
+  tags {
+        "Name" = "chef"
+        "Account Owner" = "kajdhfkjha"
+        "schedule" = "default"
+        "InstanceUserID" = "kjahfkdjh"
+        }
+  user_data = "${file("/root/chef.sh")}"    
+}  
